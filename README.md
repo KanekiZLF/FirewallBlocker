@@ -4,7 +4,7 @@
 
 Este programa foi desenvolvido para facilitar a adição de programas ao firewall do Windows com o objetivo de bloquear sua conexão com a internet. Ele permite que o usuário selecione o programa desejado através de um seletor de arquivos integrado, e em seguida, adiciona o programa ao firewall com as configurações adequadas para bloquear sua comunicação com a internet. Com essa funcionalidade, os usuários podem aumentar a segurança de seus sistemas controlando quais aplicativos têm acesso à rede e protegendo-se contra atividades não autorizadas ou maliciosas.
 
-# Como usar
+# Como usar ?
 
 Execute o programa "FirewallBlocker" em seu computador.
 
