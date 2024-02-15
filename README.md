@@ -9,7 +9,7 @@ Este programa foi desenvolvido para facilitar a adição de programas ao firewal
 Execute o programa "FirewallBlocker" em seu computador.
 
 Selecionar o Programa:
-Clique no botão "Selecionar Programa" para abrir o seletor de arquivos.
+Clique no botão "..." para abrir o seletor de arquivos.
 Navegue até o programa que você deseja bloquear no firewall e selecione-o.
 
 Adicionar à Lista de Bloqueio:
