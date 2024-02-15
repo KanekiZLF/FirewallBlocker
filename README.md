@@ -12,8 +12,9 @@ Selecionar o Programa:
 Clique no botão "..." para abrir o seletor de arquivos.
 Navegue até o programa que você deseja bloquear no firewall e selecione-o.
 
-Adicionar à Lista de Bloqueio:
-Após selecionar o programa, clique no botão "Adicionar à Lista" para adicionar o programa ao firewall.
+Nomei a Regra:
+Após selecionar o programa, de um nome para regra após isso
+clique no botão "Adicionar à Lista" para adicionar o programa ao firewall.
 
 Confirmação de Sucesso:
 Você receberá uma mensagem de confirmação indicando que o programa foi adicionado com sucesso à lista de bloqueio do firewall.
