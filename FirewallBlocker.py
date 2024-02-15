@@ -82,6 +82,12 @@ def obter_dados():
     def adicionar_regra():
         programa = entrada_programa.get()
         nome_regra = entrada_nome_regra.get()
+
+        # Verificar se os campos não estão em branco
+        if not programa.strip() or not nome_regra.strip():
+            messagebox.showerror("Erro na Regra", "Por favor, preencha todos os campos.")
+            return
+    
         adicionar_regra_firewall(programa, nome_regra)
         janela.destroy()
 
