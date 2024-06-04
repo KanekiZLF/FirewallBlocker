@@ -247,12 +247,17 @@ aboutButton.place(x=134, y=132)
 # Rodar o loop principal
 
 def main():
+     # Coloca a janela no topo
+    root.lift()
+    root.attributes('-topmost', True)
+    root.after_idle(root.attributes, '-topmost', False)  # Voltar ao estado normal depois de ser mostrada
+    centerWindow(root)
     root.mainloop()
 
 if __name__ == "__main__":
     # Solicitar privilégios de administrador
-    #if not pyuac.isUserAdmin():
-        #pyuac.runAsAdmin()
-    #else:
+    if not pyuac.isUserAdmin():
+        pyuac.runAsAdmin()
+    else:
         centerWindow(root)
         main()
