@@ -237,7 +237,7 @@ programsPositions = [
 ]
 
 def aboutKaneki ():
-    messagebox.showinfo("Desenvolvido por Kaneki", f"Este programa tem como função lhe ajudar a bloquear conexão de rede do programa Corel Draw !!.")
+    messagebox.showinfo("Desenvolvido por KanekiZLF", f"Este programa tem como função lhe ajudar a bloquear conexão de rede do programa Corel Draw !!.")
     return
 blockButton = tk.Button(root, text="Block", command=blockProgram)
 blockButton.place(x=55, y=128)
