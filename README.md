@@ -1,26 +1,59 @@
 # FirewallBlocker
 
-# Para que serve ?
+## Para que Serve Este Programa?
 
-Este programa foi desenvolvido para facilitar a adição de programas ao firewall do Windows com o objetivo de bloquear sua conexão com a internet. Ele permite que o usuário selecione o programa desejado através de um seletor de arquivos integrado, e em seguida, adiciona o programa ao firewall com as configurações adequadas para bloquear sua comunicação com a internet. Com essa funcionalidade, os usuários podem aumentar a segurança de seus sistemas controlando quais aplicativos têm acesso à rede e protegendo-se contra atividades não autorizadas ou maliciosas.
+O programa FirewallCorel foi desenvolvido com o objetivo de auxiliar os usuários do CorelDRAW a controlar o acesso à rede dos executáveis do software. Ele oferece uma solução simples e eficaz para bloquear o acesso à internet dos programas CorelDRAW, como o FontManager, CorelDRW, CorelPP, Capture, CdrConv e Cap.
 
-# Como usar ?
+### Funcionalidades Principais:
 
-Execute o programa "FirewallBlocker" em seu computador.
+- **Bloqueio de Acesso à Rede:** O programa permite criar regras no firewall do Windows para bloquear o acesso à rede para os executáveis do CorelDRAW. Isso é útil para garantir a privacidade e a segurança dos dados, impedindo que o CorelDRAW se comunique com a internet sem o consentimento do usuário.
 
-Selecionar o Programa:
-Clique no botão "..." para abrir o seletor de arquivos.
-Navegue até o programa que você deseja bloquear no firewall e selecione-o.
+- **Verificação Automática de Executáveis:** Ao selecionar a pasta onde estão localizados os executáveis do CorelDRAW, o programa verifica automaticamente se esses arquivos estão presentes. Ele fornece uma indicação clara de quais executáveis foram encontrados, facilitando o processo de configuração.
 
-Nomei a Regra:
-Após selecionar o programa, de um nome para regra após isso
-clique no botão "Adicionar à Lista" para adicionar o programa ao firewall.
+- **Interface Amigável:** O programa apresenta uma interface simples e intuitiva, tornando-o acessível para usuários de todos os níveis de habilidade. Ele guia o usuário por meio de um processo passo a passo para bloquear o acesso à rede do CorelDRAW de forma rápida e eficiente.
 
-Confirmação de Sucesso:
-Você receberá uma mensagem de confirmação indicando que o programa foi adicionado com sucesso à lista de bloqueio do firewall.
+### Benefícios:
 
-Adicionar Mais Programas (opcional):
-Se desejar adicionar mais programas ao firewall, repita os passos 2 a 4.
-Finalizar o Programa:
+- **Privacidade Aprimorada:** Ao bloquear o acesso à internet para os executáveis do CorelDRAW, o programa ajuda a proteger a privacidade do usuário, evitando que o software envie informações não autorizadas pela rede.
 
-Quando terminar de adicionar programas ao firewall, feche o programa "FirewallBlocker".
+- **Segurança Reforçada:** Ao restringir o acesso à rede dos executáveis do CorelDRAW, o programa contribui para fortalecer a segurança do sistema, reduzindo a exposição a ameaças online e ataques cibernéticos.
+
+- **Controle do Tráfego de Dados:** O programa permite que os usuários tenham maior controle sobre o tráfego de dados gerado pelo CorelDRAW, ajudando a evitar o consumo desnecessário de largura de banda e garantindo uma melhor experiência de uso.
+
+Em resumo, o FirewallCorel é uma ferramenta útil para os usuários do CorelDRAW que desejam controlar e restringir o acesso à rede dos executáveis do software, proporcionando maior privacidade, segurança e controle sobre o tráfego de dados.
+
+## Como Bloquear o Acesso à Rede para o CorelDRAW
+
+### Passo 1: Baixar e Executar o Programa
+
+- Baixe o executável do programa FirewallCorel.
+- Dê um clique duplo no arquivo executável para iniciar o programa.
+
+### Passo 2: Selecionar a Pasta do CorelDRAW
+
+- Ao abrir o programa, você verá um campo de entrada.
+- Insira o caminho para a pasta onde estão localizados os executáveis do CorelDRAW.
+- Você pode clicar no botão com três pontos ("...") para procurar e selecionar a pasta.
+
+### Passo 3: Verificar os Executáveis do CorelDRAW
+
+- Após selecionar a pasta, o programa verificará se os executáveis do CorelDRAW estão presentes.
+- Para cada executável, será exibido um indicador:
+  - ✔️ Se o executável estiver presente.
+  - ❌ Se o executável estiver ausente.
+
+### Passo 4: Bloquear o Acesso à Rede
+
+- Uma vez que todos os executáveis do CorelDRAW estejam identificados corretamente, clique no botão "Block".
+- Isso criará regras no firewall para bloquear o acesso à rede para os executáveis do CorelDRAW.
+- Isso ajudará a garantir que o CorelDRAW não possa acessar a internet.
+
+### Passo 5: Mais Informações
+
+- Se precisar de mais informações sobre o desenvolvedor ou sobre o propósito do programa, clique no botão "?".
+- Isso fornecerá detalhes adicionais sobre o programa e seu funcionamento.
+
+### Observação:
+
+- Este programa requer privilégios de administrador para funcionar corretamente.
+- É possível que o sistema solicite permissões adicionais ao executar o programa pela primeira vez.
