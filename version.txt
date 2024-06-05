@@ -1,0 +1,31 @@
+# Desenvolvido por Luiz F. R. Pimentel
+# https://github.com/KanekiZLF
+
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(1, 0, 2, 0),
+    prodvers=(1, 0, 2, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+    ),
+  kids=[
+    StringFileInfo(
+      [
+      StringTable(
+        '040904B0',
+        [StringStruct('CompanyName', 'KanekiZLF'),
+        StringStruct('FileDescription', 'Bloqueia conexão de rede do CorelDraw'),
+        StringStruct('FileVersion', '1.0.2.0'),
+        StringStruct('InternalName', 'CorelBlock'),
+        StringStruct('LegalCopyright', '© KanekiZLF 2024'),
+        StringStruct('OriginalFilename', 'CorelBlock.exe'),
+        StringStruct('ProductName', 'Corel Block'),
+        StringStruct('ProductVersion', '1.0.2.0')])
+      ]),
+    VarFileInfo([VarStruct('Translation', [1033, 1200])])
+  ]
+)

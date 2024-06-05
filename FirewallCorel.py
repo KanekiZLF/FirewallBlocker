@@ -9,12 +9,12 @@ import os
 import sys
 
 # Caminhos dos programas fixos
-FontManager = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\FontManager.exe"
-CorelDRW = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\CorelDWR.exe"
-CorelPP = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\CorelPP.exe"
-Capture = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\Capture.exe"
-CdrConv = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\CdrConv.exe"
-Cap = r"C:\Program Files\Corel\CorelDRAW Graphics Suite 2022\Programs64\Cap.exe"
+FontManager = "FontManager.exe"
+CorelDRW = "CorelDRW.exe"
+CorelPP = "CorelPP.exe"
+Capture = "Capture.exe"
+CdrConv = "CdrConv.exe"
+Cap = "Cap.exe"
 lanel = ""
 folderPath = ""
 errorMsg = False
@@ -34,22 +34,23 @@ def ruleExists(ruleName):
         "firewall",
         "show",
         "rule",
-        "name=" + ruleName
+        f"name={ruleName}"
     ]
 
     # Executa o comando e captura a saída
     try:
-        output = subprocess.check_output(comando, universal_newlines=True)
+        output = subprocess.check_output(comando, universal_newlines=True, stderr=subprocess.STDOUT)
+        # Debugging: Print the output
+        print(f"Output for rule {ruleName}:\n{output}")
         # Verifica se a regra existe na saída
-        if ruleName in output:
-            return True
-        else:
-            return False
-    except subprocess.CalledProcessError:
+        return ruleName in output
+    except subprocess.CalledProcessError as e:
+        # Debugging: Print the error
+        print(f"Error checking rule {ruleName}: {e.output}")
         # Se ocorrer um erro ao executar o comando, a regra não existe
         return False
 
-def programExist(program_name):
+def programExist(programName):
     global folderPath
     
     # Verifica se a pasta existe
@@ -62,7 +63,7 @@ def programExist(program_name):
     files = os.listdir(folderPath)
 
     # Verifica se o programa está na lista de arquivos
-    if program_name in files:
+    if programName in files:
         return True
     else:
         return False
@@ -76,7 +77,7 @@ def blockProgram():
                 and ruleExists("BlockCapture") and ruleExists("BlockCdrConv") and ruleExists("BlockCap"):
             messagebox.showinfo("Info", "As regras já existem no firewall.")
         else:
-            comando_corelfnt = [
+            comandCorelFnt = [
             "netsh",
             "advfirewall",
             "firewall",
@@ -85,11 +86,11 @@ def blockProgram():
             "name=BlockFontManager",
             "dir=out",
             "action=block",
-            f"program={FontManager}",
+            f"program={os.path.normpath(os.path.join(folderPath, FontManager))}",
             "enable=yes"
         ]
 
-            comando_coreldrw = [
+            comandCorelDrw = [
                 "netsh",
                 "advfirewall",
                 "firewall",
@@ -98,11 +99,11 @@ def blockProgram():
                 "name=BlockCorelDRW",
                 "dir=out",
                 "action=block",
-                f"program={CorelDRW}",
+                f"program={os.path.normpath(os.path.join(folderPath, CorelDRW))}",
                 "enable=yes"
             ]
 
-            comando_corelpp = [
+            comandCorelPP = [
                 "netsh",
                 "advfirewall",
                 "firewall",
@@ -111,11 +112,11 @@ def blockProgram():
                 "name=BlockCorelPP",
                 "dir=out",
                 "action=block",
-                f"program={CorelPP}",
+                f"program={os.path.normpath(os.path.join(folderPath, CorelPP))}",
                 "enable=yes"
             ]
 
-            comando_corelcapture = [
+            comandCorelCapture = [
                 "netsh",
                 "advfirewall",
                 "firewall",
@@ -124,11 +125,11 @@ def blockProgram():
                 "name=BlockCapture",
                 "dir=out",
                 "action=block",
-                f"program={Capture}",
+                f"program={os.path.normpath(os.path.join(folderPath, Capture))}",
                 "enable=yes"
             ]
 
-            comando_corelcdrconv = [
+            comandCorelCdrConv = [
                 "netsh",
                 "advfirewall",
                 "firewall",
@@ -137,11 +138,11 @@ def blockProgram():
                 "name=BlockCdrConv",
                 "dir=out",
                 "action=block",
-                f"program={CdrConv}",
+                f"program={os.path.normpath(os.path.join(folderPath, CdrConv))}",
                 "enable=yes"
             ]
 
-            comando_corelcap = [
+            comandCorelCap = [
                 "netsh",
                 "advfirewall",
                 "firewall",
@@ -150,16 +151,16 @@ def blockProgram():
                 "name=BlockCap",
                 "dir=out",
                 "action=block",
-                f"program={Cap}",
+                f"program={os.path.normpath(os.path.join(folderPath, Cap))}",
                 "enable=yes"
             ]
             try:
-                subprocess.run(comando_corelfnt, check=True)
-                subprocess.run(comando_coreldrw, check=True)
-                subprocess.run(comando_corelpp, check=True)
-                subprocess.run(comando_corelcapture, check=True)
-                subprocess.run(comando_corelcdrconv, check=True)
-                subprocess.run(comando_corelcap, check=True)
+                subprocess.run(comandCorelFnt, check=True)
+                subprocess.run(comandCorelDrw, check=True)
+                subprocess.run(comandCorelPP, check=True)
+                subprocess.run(comandCorelCapture, check=True)
+                subprocess.run(comandCorelCdrConv, check=True)
+                subprocess.run(comandCorelCap, check=True)
                 messagebox.showinfo("Sucesso", "Acesso à rede para os programas CorelDRAW foi bloqueado com sucesso!")
                 sys.exit()
             except subprocess.CalledProcessError as e:
@@ -184,7 +185,7 @@ corelFiles.place(x= 132, y= 102)
 withWindow = 160
 hightWindow = 160
 root.geometry(f"{withWindow}x{hightWindow}")
-root.title("CorelBlock by Kaneki")
+root.title("CorelBlock by KanekiZLF")
 
 root.resizable(False,False)
 
